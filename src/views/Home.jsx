@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import getTrending from '../syncs/gifs'
+import syncs from '../syncs/gifs'
 import '../styles/home.css'
 import NavBar from '../components/NavBar'
 
@@ -7,7 +7,9 @@ function Home() {
 
     const [trending, updateTrending] = useState()
     useEffect(() => {
-        getTrending(updateTrending)
+        // getTrending(updateTrending)
+        // getBySearch('chainsaw man')
+        get.getBySearch('chainsaw man')
     }, [])
     console.log(trending)
     return (
