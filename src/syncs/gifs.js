@@ -6,17 +6,19 @@ async function getTrending(updateTrending) {
   const request = axios
     .get(`https://api.giphy.com/v1/gifs/trending?${apiKey}`)
     .then((res) => {
-        updateTrending(res.data)
+      updateTrending(res.data);
     });
 }
 
-async function getBySearch(query) {
-  const request = axios.get(`https://api.giphy.com/v1/gifs/search?q=${query}?&${apiKey}`).then((result) => {
-    console.log(result.data)
-  })
+async function getBySearch(query, updateTrending) {
+  const request = axios
+    .get(`https://api.giphy.com/v1/gifs/search?q=${query}&${apiKey}`)
+    .then((result) => {
+      updateTrending(result.data)
+    });
 }
 
 export default {
   getTrending,
-  getBySearch
+  getBySearch,
 };
