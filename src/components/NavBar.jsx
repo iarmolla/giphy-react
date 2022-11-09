@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
+import syncs from '../syncs/gifs'
 
-function NavBar() {
+function NavBar({ ...props }) {
+    const [search, updateSearch] = useState()
     return (
         <>
 
@@ -8,7 +10,6 @@ function NavBar() {
                 <div class="container flex flex-wrap justify-between items-center mx-auto">
                     <a href="https://flowbite.com/" class="flex items-center">
                         <img src="https://upload.wikimedia.org/wikipedia/fr/a/a0/Giphy_logo.gif" class="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-
                     </a>
                     <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
                         <span class="sr-only">Open main menu</span>
@@ -36,8 +37,16 @@ function NavBar() {
                     </div>
                 </div>
                 <div className='flex flex-row items-center gap-1 '>
-                    <input class="bg-gray-50 border outline-0 border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Gif..." />
-                    <box-icon name='search' color='#fffafa' ></box-icon>
+                    <input class="bg-gray-50 border outline-0 border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Gif..." onChange={(e) => {
+                        updateSearch(e.target.value)
+                    }} onKeyDown={(e) => {
+                        if (e.key == 'Enter') {
+                            syncs.getBySearch(search, props.updateGifs)
+                        }
+                    }} />
+                    <box-icon name='search' color='#fffafa' onClick={() => {
+                        syncs.getBySearch(search, props.updateGifs)
+                    }}></box-icon>
                 </div>
             </nav>
 
