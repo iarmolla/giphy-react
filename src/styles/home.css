@@ -24,6 +24,10 @@ img{
    grid-column-end: span 2;
    grid-row-end: span 2;
 }
+.gif-card:last-child {
+    grid-column-end: span 1;
+    grid-row-end: span 2;
+ }
 .gif-card {
     height: 100%;
 }
