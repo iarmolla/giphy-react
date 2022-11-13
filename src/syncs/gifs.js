@@ -14,11 +14,20 @@ async function getBySearch(query, updateTrending) {
   const request = axios
     .get(`https://api.giphy.com/v1/gifs/search?q=${query}&${apiKey}`)
     .then((result) => {
-      updateTrending(result.data)
+      updateTrending(result.data);
+    });
+}
+
+async function getStickers(query,updateTrending) {
+  const request = axios
+    .get(`https://api.giphy.com/v1/stickers/search?q=${query}${apiKey}`)
+    .then((result) => {
+      updateTrending(result.data);
     });
 }
 
 export default {
   getTrending,
   getBySearch,
+  getStickers
 };
