@@ -3,16 +3,24 @@ import syncs from '../syncs/gifs'
 import '../styles/home.css'
 import NavBar from '../components/NavBar'
 
-function Home() {
 
+function Home() {
     const [search, updateSearch] = useState()
     const [gifs, updateGifs] = useState()
-    const [mouseHover, setMouseHover] = useState()
-
+    const [mouseHover, setMouseHover] = useState('hidden')
     useEffect(() => {
         syncs.getTrending(updateGifs)
     }, [])
-    console.log(mouseHover)
+    const hideImage = ((gif) => {
+        if (gif?.user?.hasOwnProperty('avatar_url')) {
+            return <img className={`w-10 h-10 rounded-full ${mouseHover}`} src={gif?.user?.avatar_url} alt="" />
+        }
+    })
+    const hideUser = ((gif) => {
+        if (gif?.user?.username != "") {
+            return <h3 className={`gif-title ${mouseHover}`}>{gif?.user?.username}</h3>
+        }
+    })
     return (
         <div>
             <div className='lg:flex lg:justify-center sm:flex sm:justify-center'>
@@ -20,34 +28,24 @@ function Home() {
             </div>
             <div className='container-gif lg:my-8 lg:mx-40 sm:m-8 sm:grid sm:grid-cols-1 sm:grid-rows-1'>
                 <div className='flex flex-row gap-4 items-center left-4 mt-5 absolute -top-20'>
-                    <button className='rounded-md bg-slate-700 w-20 py-1' onClick={() => {
-                        syncs.getBySearch(search, updateGifs);
-                    }}>Gifs</button>
-                    <button className='rounded-md bg-slate-700 w-20 py-1' onClick={() => {
-                        syncs.getStickers(search, updateGifs);
-                    }}>Stickers</button>
+                    <button className='rounded-md bg-slate-700 w-20 py-1' onClick={() => syncs.getBySearch(search, updateGifs)}>Gifs</button>
+                    <button className='rounded-md bg-slate-700 w-20 py-1' onClick={() => syncs.getStickers(search, updateGifs)}>Stickers</button>
                 </div>
                 {
                     gifs?.data.map((gif) => {
                         return (
-                            <div key={gif.id} className='gif-card' onMouseEnter={((e)=> {
-                                setMouseHover('block')
-                            })}
-                            onMouseLeave={((e)=> {
-                                setMouseHover('hidden')
-                            })}>
-                                <div className='gif-link'>
-                                    <img src={gif.images.original.url} alt="" />
-                                    <div className='flex flex-row absolute bottom-2 gap-2 left-1'>
-                                        {
-
-                                            gif?.user?.hasOwnProperty('avatar_url') ? <img className={`w-10 h-10 rounded-full ${mouseHover}`} src={gif?.user?.avatar_url} alt="" /> : <img src="" alt="" />
-                                        }
-                                        {
-                                            gifs?.user?.username != "" ? <h3 className={`gif-title ${mouseHover}`}>{gif?.user?.username}</h3> : ''
-                                        }
+                            <div key={gif.id} className='gif-card'>                              
+                                    <div className='gif-link overflow-hidden'>
+                                        <img 
+                                       
+                                        src={gif.images.original.url} alt="" onMouseEnter={() => setMouseHover('block')}
+                                            onMouseLeave={() => setMouseHover('hidden')} />
+                                        <div className='flex flex-row absolute bottom-2 gap-2 left-1'>
+                                            {hideImage(gif)}
+                                            {hideUser(gif)}
+                                        </div>
                                     </div>
-                                </div>
+                                
                             </div>
                         )
                     })
