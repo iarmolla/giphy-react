@@ -5,7 +5,7 @@
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   grid-auto-rows: 210px;
   grid-auto-flow: row dense;
-  gap: 1rem;
+  gap: 2rem;
   align-items: center;
   break-inside: avoid;
   grid-template-rows: auto;
@@ -26,7 +26,13 @@ img:hover {
 }
 
 .gif-card {
+  /* Right  Bottom blum -width*/
   height: 100%;
+  transition: 600ms;
+}
+
+.gif-card:hover {
+  box-shadow: 0px 6px 0px 0 #5b5ddf, 0px 18px 0px -5px #4b4db7,0px 30px 0px -10px #3d3e92;
 }
 
 .gif-link {
@@ -38,6 +44,7 @@ img:hover {
   font-size: 1.5rem;
   text-align: center;
 }
+
 /* Desktop */
 @media (min-width: 1024px) {
   .gif-card:nth-child(8n + 1) {

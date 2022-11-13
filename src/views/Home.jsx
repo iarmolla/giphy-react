@@ -8,6 +8,7 @@ function Home() {
     const [search, updateSearch] = useState()
     const [gifs, updateGifs] = useState()
     const [mouseHover, setMouseHover] = useState('hidden')
+    console.log(gifs)
     useEffect(() => {
         syncs.getTrending(updateGifs)
     }, [])
@@ -28,24 +29,21 @@ function Home() {
             </div>
             <div className='container-gif lg:my-8 lg:mx-40 sm:m-8 sm:grid sm:grid-cols-1 sm:grid-rows-1'>
                 <div className='flex flex-row gap-4 items-center left-4 mt-5 absolute -top-20'>
-                    <button className='rounded-md bg-slate-700 w-20 py-1' onClick={() => syncs.getBySearch(search, updateGifs)}>Gifs</button>
-                    <button className='rounded-md bg-slate-700 w-20 py-1' onClick={() => syncs.getStickers(search, updateGifs)}>Stickers</button>
+                    <button className='rounded-md bg-indigo-500 w-20 py-1' onClick={() => syncs.getBySearch(search, updateGifs)}>Gifs</button>
+                    <button className='rounded-md bg-indigo-500 w-20 py-1' onClick={() => syncs.getStickers(search, updateGifs)}>Stickers</button>
                 </div>
                 {
                     gifs?.data.map((gif) => {
                         return (
-                            <div key={gif.id} className='gif-card'>                              
+                            <div key={gif.id} className='gif-card' onMouseEnter={() => setMouseHover('block')}
+                            onMouseLeave={() => setMouseHover('hidden')} >                              
                                     <div className='gif-link overflow-hidden'>
-                                        <img 
-                                       
-                                        src={gif.images.original.url} alt="" onMouseEnter={() => setMouseHover('block')}
-                                            onMouseLeave={() => setMouseHover('hidden')} />
-                                        <div className='flex flex-row absolute bottom-2 gap-2 left-1'>
+                                        <img src={gif.images.original.url} alt="" />
+                                        <div className='flex flex-row absolute bottom-2 gap-2 left-1 gif-item'>
                                             {hideImage(gif)}
                                             {hideUser(gif)}
                                         </div>
-                                    </div>
-                                
+                                    </div>                               
                             </div>
                         )
                     })
