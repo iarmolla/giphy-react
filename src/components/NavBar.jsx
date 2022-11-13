@@ -1,56 +1,53 @@
-import React, { useState } from 'react'
-import syncs from '../syncs/gifs'
+import syncs from "../syncs/gifs";
 
 function NavBar({ ...props }) {
-    const [search, updateSearch] = useState()
-    return (
-        <>
-            <nav className=" border-gray-200 px-2 sm:px-4 py-2.5 rounded ">
-                <div className="container flex flex-wrap justify-between items-center mx-auto">
-                    <a href="https://flowbite.com/" className="flex items-center">
-                        <img src="https://upload.wikimedia.org/wikipedia/fr/a/a0/Giphy_logo.gif" className="mr-3 h-6 sm:h-9" alt="Flowbite Logo" />
-                    </a>
-                    <button data-collapse-toggle="navbar-default" type="button" className="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-                        <span className="sr-only">Open main menu</span>
-                        <svg className="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd"></path></svg>
-                    </button>
-                    <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-                        <ul className="flex flex-col p-4 mt-4  rounded-lg border border-gray-100 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0   ">
-
-                            <li>
-                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Reactions</a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Entertainment</a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Sports</a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Stickers</a>
-                            </li>
-                            <li>
-                                <a href="#" className="block py-2 pr-4 pl-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Artists</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                <div className='flex flex-row items-center gap-1 '>
-                    <input className="bg-gray-50 border outline-0 border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5  dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Gif..." onChange={(e) => {
-                        updateSearch(e.target.value)
-                    }} onKeyDown={(e) => {
-                        if (e.key == 'Enter') {
-                            syncs.getBySearch(search, props.updateGifs)
-                        }
-                    }} />
-                    <box-icon name='search' color='#fffafa' onClick={() => {
-                        syncs.getBySearch(search, props.updateGifs)
-                    }}></box-icon>
-                </div>
-            </nav>
-
-        </>
-    )
+  return (
+    <>
+      <nav className="border-gray-200 sm:gap-0 sm:p-5 m-5 rounded lg:w-3/6 ml-3 sm:w-3/4">
+        <div className="container flex flex-wrap items-center mx-auto">
+          <a href="https://flowbite.com/" className="flex items-center">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/fr/a/a0/Giphy_logo.gif"
+              className="mr-3 h-6 sm:h-9"
+              alt="Flowbite Logo"
+            />
+          </a>
+          <div className="flex gap-7 justify-center items-center">
+            <span>Random</span>
+            <span>Trending</span>
+            <span>More</span>
+            <div className="flex flex-row items-center w-max">
+              <div className="w-max flex items-center bg-zinc-600 rounded-l-sm p-2">
+                <box-icon name='user' type='solid' color='#fffefe'></box-icon>
+              </div>
+              <button className="bg-zinc-700 rounded-r-sm px-5 sm:px-5 lg:px-20 py-2">Login</button>
+            </div>
+          </div>
+        </div>
+        <div className="flex flex-row items-center gap-1 w-full mt-2">
+          <input
+            className="outline-0  text-left text-gray-900 text-sm rounded-sm w-full py-4 px-3 mt-2"
+            placeholder="search..."
+            onChange={(e) => {
+              props.updateSearch(e.target.value);
+            }}
+            onKeyDown={(e) => {
+              if (e.key == "Enter") {
+                syncs.getBySearch(props.search, props.updateGifs);
+              }
+            }}
+          />
+          <box-icon
+            name="search"
+            color="#fffafa"
+            onClick={() => {
+              syncs.getBySearch(props.search, props.updateGifs);
+            }}
+          ></box-icon>
+        </div>
+      </nav>
+    </>
+  );
 }
 
-export default NavBar
+export default NavBar;
