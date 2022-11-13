@@ -1,53 +1,51 @@
 .container-gif {
-    margin: 2rem 10rem;
-    display: grid;
-    justify-content: center;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    grid-auto-rows: 210px;
-    grid-auto-flow: row dense;
-    grid-gap: 1rem;
-    grid-gap: 1rem;
-    gap:1rem;
-    align-items: center;
-    break-inside: avoid;
-    grid-template-rows: auto;
+  margin-top: 5rem;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-auto-rows: 210px;
+  grid-auto-flow: row dense;
+  gap: 1rem;
+  align-items: center;
+  break-inside: avoid;
+  grid-template-rows: auto;
+  position: relative;
 }
-img{
-    object-fit: cover;
-    height: inherit;
-    width: 100%;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: 1000ms;
-}
-.gif-card:nth-child(8n+1) {
-   grid-column-end: span 2;
-   grid-row-end: span 2;
-}
-.gif-card:last-child {
-    grid-column-end: span 1;
-    grid-row-end: span 2;
- }
-.gif-card {
-    height: 100%;
+img {
+  object-fit: cover;
+  height: inherit;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 1000ms;
 }
 
-body{
-    color: #fff;
-    background-color: #121212;
+img:hover {
+  transition: 1000ms;
+  opacity: 0.6;
 }
+
+.gif-card {
+  height: 100%;
+}
+
 .gif-link {
-    height: 100%;
-    position: relative;
+  height: 100%;
+  position: relative;
 }
+
 .gif-title {
-    text-align: center;
-    position: absolute;
-    top: 0;
-    opacity: .8;
-    left: .5rem;
+  font-size: 1.5rem;
+  text-align: center;
 }
-img:hover{
-    transition: 1000ms;
-    opacity: .6;
+/* Desktop */
+@media (min-width: 1024px) {
+  .gif-card:nth-child(8n + 1) {
+    grid-column-end: span 2;
+    grid-row-end: span 2;
+  }
+  .gif-card:last-child {
+    grid-column-end: span 1;
+    grid-row-end: span 2;
+  }
 }
