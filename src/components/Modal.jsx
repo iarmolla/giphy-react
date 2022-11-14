@@ -1,0 +1,24 @@
+import React from 'react'
+import '../styles/modal.css'
+
+function Modal({ image, showModal, setShowModal }) {
+    return (
+        <div>
+            {
+                showModal == true ? <div>
+                    <div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex items-center justify-center hover:opacity-100">
+                        <div className="relative rounded">
+                            <img src={image} alt="" className='modal-image ' />
+                            <div className='absolute top-0 p-2 rounded-lg text-sm hover:text-white cursor-pointer' onClick={()=> setShowModal(false)}>
+                                <box-icon name='x' color='#fffafa'></box-icon>
+                            </div>
+                        </div>
+                    </div>
+                </div> : ''
+            }
+        </div >
+    )
+}
+
+export default Modal
+
