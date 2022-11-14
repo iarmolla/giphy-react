@@ -4,7 +4,7 @@ function NavBar({ ...props }) {
   return (
     <>
       <nav className="border-gray-200 sm:gap-0 sm:p-5 m-5 rounded lg:w-3/6 ml-3 sm:w-3/4">
-        <div className="container flex flex-wrap items-center mx-auto">
+        <div className="container flex flex-wrap justify-around items-center mx-auto">
           <a href="https://flowbite.com/" className="flex items-center">
             <img
               src="https://upload.wikimedia.org/wikipedia/fr/a/a0/Giphy_logo.gif"
@@ -12,7 +12,7 @@ function NavBar({ ...props }) {
               alt="Flowbite Logo"
             />
           </a>
-          <div className="flex gap-7 justify-between items-center">            
+          <div className="flex gap-7 items-center">            
             <div className="flex flex-row items-center w-max">
               <div className="w-max flex items-center bg-zinc-600 rounded-l-sm p-2">
                 <box-icon name='user' type='solid' color='#fffefe'></box-icon>
