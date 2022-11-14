@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import syncs from '../syncs/gifs'
 import '../styles/home.css'
 import NavBar from '../components/NavBar'
@@ -6,19 +6,19 @@ import NavBar from '../components/NavBar'
 
 function Home() {
     const [search, updateSearch] = useState()
-    const [gifs, updateGifs] = useState()
+    const [gifs, updateGifs] = useState([1,2,3])
     const [mouseHover, setMouseHover] = useState('hidden')
-    console.log(gifs)
-    useEffect(() => {
-        syncs.getTrending(updateGifs)
+    useEffect(() => {        
+        syncs.getTrending(updateGifs)           
     }, [])
+    console.log(gifs)
     const hideImage = ((gif) => {
         if (gif?.user?.hasOwnProperty('avatar_url')) {
             return <img className={`w-10 h-10 rounded-full ${mouseHover}`} src={gif?.user?.avatar_url} alt="" />
         }
     })
     const hideUser = ((gif) => {
-        if (gif?.user?.username != "") {
+        if (gif?.user?.username !== "") {
             return <h3 className={`gif-title ${mouseHover}`}>{gif?.user?.username}</h3>
         }
     })
@@ -33,17 +33,17 @@ function Home() {
                     <button className='rounded-md bg-indigo-500 w-20 py-1' onClick={() => syncs.getStickers(search, updateGifs)}>Stickers</button>
                 </div>
                 {
-                    gifs?.data.map((gif) => {
+                    gifs?.data?.map((gif) => {
                         return (
-                            <div key={gif.id} className='gif-card' onMouseEnter={() => setMouseHover('block')}
-                            onMouseLeave={() => setMouseHover('hidden')} >                              
-                                    <div className='gif-link overflow-hidden'>
-                                        <img src={gif.images.original.url} alt="" />
-                                        <div className='flex flex-row absolute bottom-2 gap-2 left-1 gif-item'>
-                                            {hideImage(gif)}
-                                            {hideUser(gif)}
-                                        </div>
-                                    </div>                               
+                            <div key={gif?.id} className='gif-card' onMouseEnter={() => setMouseHover('block')}
+                                onMouseLeave={() => setMouseHover('hidden')} >
+                                <div className='gif-link overflow-hidden'>
+                                    <img src={gif.images.original.url} alt={gif?.title} />
+                                    <div className='flex flex-row absolute bottom-2 gap-2 left-1 gif-item'>
+                                        {hideImage(gif)}
+                                        {hideUser(gif)}
+                                    </div>
+                                </div>
                             </div>
                         )
                     })
