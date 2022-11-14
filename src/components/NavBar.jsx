@@ -12,10 +12,7 @@ function NavBar({ ...props }) {
               alt="Flowbite Logo"
             />
           </a>
-          <div className="flex gap-7 justify-center items-center">
-            <span>Random</span>
-            <span>Trending</span>
-            <span>More</span>
+          <div className="flex gap-7 justify-between items-center">            
             <div className="flex flex-row items-center w-max">
               <div className="w-max flex items-center bg-zinc-600 rounded-l-sm p-2">
                 <box-icon name='user' type='solid' color='#fffefe'></box-icon>
