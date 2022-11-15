@@ -44,6 +44,15 @@ img:hover {
   text-align: center;
 }
 
+.image-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  margin: .5rem 0 0 .5rem ;
+  background-color: #373738;
+}
+
 /* Desktop */
 @media (min-width: 1024px) {
   .gif-card:nth-child(8n + 1) {
