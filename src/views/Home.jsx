@@ -40,7 +40,7 @@ function Home() {
                             <div key={gif?.id} className='gif-card' onMouseEnter={() => setMouseHover('block')}
                                 onMouseLeave={() => setMouseHover('hidden')} onClick={() => setImage(gif?.images?.original?.url)} >
                                 <div className='gif-link overflow-hidden' onClick={()=> setShowModal(true)}>
-                                    <img src={gif.images.original.url} alt={gif?.title} />
+                                    <img className='w-full' src={gif.images.original.url} alt={gif?.title} />
                                     <div className='flex flex-row absolute bottom-2 gap-2 left-1 gif-item'>
                                         {hideImage(gif)}
                                         {hideUser(gif)}

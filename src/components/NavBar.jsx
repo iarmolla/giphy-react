@@ -8,7 +8,7 @@ function NavBar({ ...props }) {
           <a href="https://flowbite.com/" className="flex items-center">
             <img
               src="https://upload.wikimedia.org/wikipedia/fr/a/a0/Giphy_logo.gif"
-              className="mr-3 h-6 sm:h-9"
+              className="mr-3 h-6 sm:h-9 "
               alt="Flowbite Logo"
             />
           </a>
