@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap");
 .container-- {
-  background-image: url('../assets/images/background.PNG');
+  height: 100%;
+  background-image: url("../assets/images/background.PNG");
 }
 
 .image-sticker {
@@ -83,4 +84,18 @@
   position: absolute;
   max-width: 300px;
   min-height: min-content;
+}
+@media (max-width: 640px) {
+  .upload-gifs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(100px, 1fr));
+    justify-items: center;
+  }
+  .upload {
+    padding: 0 1rem;
+  }
+  .sticker {
+    height: 100px;
+    top: -30px;
+  }
 }
