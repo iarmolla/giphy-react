@@ -1,4 +1,5 @@
 import '../styles/upload.css'
+import { Link } from "react-router-dom";
 
 function Upload() {
     return (
@@ -6,14 +7,14 @@ function Upload() {
             <div className='flex flex-col pt-4'>
                 <header className='flex flex-row justify-around max-h-10'>
                     <div className='flex flex-row justify-center items-center'>
-                        <img src="https://images.squarespace-cdn.com/content/v1/599bbf76914e6bb960c6d0bb/1525422704166-0UFZBQI8WXK6NVH6KYHA/giphy+logo+web+whit-01.png?format=1500w" className='max-h-20' alt="" />                       
-                    </div>                    
+                        <img src="https://images.squarespace-cdn.com/content/v1/599bbf76914e6bb960c6d0bb/1525422704166-0UFZBQI8WXK6NVH6KYHA/giphy+logo+web+whit-01.png?format=1500w" className='max-h-20' alt="" />
+                    </div>
                     {/* HEADER BUTTON LOGIN USER */}
                     <div className='flex flex-row'>
                         <div className="w-max flex items-center bg-zinc-600 rounded-l-sm p-2">
                             <box-icon name='user' type='solid' color='#fffefe'></box-icon>
                         </div>
-                        <button className="bg-zinc-700 rounded-r-sm px-5 sm:px-5 lg:px-20 py-2">Log in</button>
+                        <Link to={'/login'} className="bg-zinc-700 rounded-r-sm px-5 sm:px-5 lg:px-20 py-2">Log in</Link>
                     </div>
                 </header>
                 <div className='relative container-upload flex flex-row items-center justify-center'>
@@ -64,8 +65,8 @@ function Upload() {
                             </section>
                         </div>
                         <section className='absolute bottom-7 flex flex-row gap-8'>
-                            <span>Community Guidelines</span>
-                            <span>Privacy Policy</span>
+                            <span className='text-xs'>Community Guidelines</span>
+                            <span className='text-xs'>Privacy Policy</span>
                         </section>
                     </main>
                 </div>
