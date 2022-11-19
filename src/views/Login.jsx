@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import '../styles/login.css'
 import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 function Login() {
   const spring = {
@@ -13,7 +14,9 @@ function Login() {
   return (
     <div className='sm:h-screen grid sm:grid-cols-2 login'>
       <form action="POST" className='flex flex-col justify-center items-center'>
-        <img src="https://giphy.com/static/img/be-animated.gif" className="login-image" alt=''></img>
+        <Link to={'/'}>
+          <img src="https://giphy.com/static/img/be-animated.gif" className="login-image" alt=''></img>
+        </Link>
         <div className="switch mb-4" data-isOn={isOn} onClick={toggleSwitch}>
           <motion.div className="handle relative" layout transition={spring}>
             <span className={`${isOn ? 'button-title' : 'button-title--'}`} >{isOn ? 'Log in' : 'Sign up'}</span>
@@ -45,7 +48,7 @@ function Login() {
           <span className='text-cyan-500 text-xs font-bold'>{!isOn ? 'Forgot Your Password?' : ''}</span>
         </div>
         <div className='flex flex-col w-full items-center justify-center gap-3 mt-4'>
-          <button className='form-logs relative  rounded-sm text-center py-3 w-2/4'>{ !isOn ? 'Log in with Facebook' : 'Sign up with facebook'}
+          <button className='form-logs relative  rounded-sm text-center py-3 w-2/4'>{!isOn ? 'Log in with Facebook' : 'Sign up with facebook'}
             <div className='absolute top-3 left-20 sm:left-3 sm:top-3'>
               <img className='h-7 rounded-md hidden sm:hidden md:hidden lg:block' src="https://www.pngkey.com/png/full/509-5094426_facebook-twitter-instagram-pinterest-facebook-logo-in-circle.png" alt="" />
             </div>
