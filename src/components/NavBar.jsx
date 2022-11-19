@@ -16,7 +16,7 @@ function NavBar({ ...props }) {
             <div className="flex flex-row items-center w-max">
               <div className="w-max flex items-center bg-zinc-600 rounded-l-sm p-2">
                 <box-icon name='user' type='solid' color='#fffefe'></box-icon>
-              </div>
+              </div>              
               <button className="bg-zinc-700 rounded-r-sm px-5 sm:px-5 lg:px-20 py-2">Login</button>
             </div>
           </div>
