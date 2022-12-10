@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 function Error() {
     return (
         <div className="items-center flex justify-center content-center flex-col-reverse lg:flex-row md:gap-28 gap-16 min-h-screen">
-            <div className="xl:pt-24 w-full xl:w-1/2 relative pb-12 lg:pb-0">
+            <div className="pt-24 w-1/2 relative">
                 <div className="relative">
                     <div>
                         <div className="flex flex-col justify-center items-center">
