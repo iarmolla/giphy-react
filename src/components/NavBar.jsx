@@ -13,6 +13,7 @@ function NavBar({ ...props }) {
           />
           <div className="flex gap-7 items-center">
             <div className="flex flex-row items-center w-max">
+              <Link to={'/upload'} className="bg-indigo-600 rounded-r-sm p-2 mr-3">Upload</Link>
               <div className="w-max flex items-center bg-zinc-600 rounded-l-sm p-2">
                 <box-icon name='user' type='solid' color='#fffefe'></box-icon>
               </div>

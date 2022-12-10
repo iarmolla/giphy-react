@@ -4,6 +4,7 @@ import Home from './views/Home';
 import Upload from './views/Upload'
 import 'boxicons'
 import Login from './views/Login';
+import Error from './views/Error'
 
 function App() {
   return (
@@ -13,7 +14,7 @@ function App() {
           <Route path="" element={<Home/>}></Route>
           <Route path="/upload" element={<Upload/>}></Route>   
           <Route path="/login" element={<Login/>}></Route>          
-
+          <Route path="*" element={<Error/>}></Route>
         </Routes>
       </BrowserRouter>
     </div>

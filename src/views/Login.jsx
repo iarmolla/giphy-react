@@ -13,7 +13,7 @@ function Login() {
   const toggleSwitch = () => setIsOn(!isOn);
   return (
     <div className='sm:h-screen grid sm:grid-cols-2 login'>
-      <form action="POST" className='flex flex-col justify-center items-center'>
+      <form className='flex flex-col justify-center items-center'>
         <Link to={'/'}>
           <img src="https://giphy.com/static/img/be-animated.gif" className="login-image" alt=''></img>
         </Link>

@@ -52,7 +52,6 @@ function Home() {
                 }
             </div>
             <Modal showModal={showModal} setShowModal={setShowModal} image={image}></Modal>
-
         </div>
     )
 }
