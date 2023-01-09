@@ -1,5 +1,6 @@
 import syncs from "../syncs/gifs";
 import { Link } from "react-router-dom";
+import gif from '../assets/images/giphy-home.gif'
 
 function NavBar({ ...props }) {
   return (
@@ -7,7 +8,7 @@ function NavBar({ ...props }) {
       <nav className="border-gray-200 sm:gap-0 sm:p-5 m-5 rounded lg:w-3/6 ml-3 sm:w-3/4">
         <div className="container flex flex-wrap justify-around items-center mx-auto">
           <img
-            src="https://upload.wikimedia.org/wikipedia/fr/a/a0/Giphy_logo.gif"
+            src={gif}
             className="mr-3 h-6 sm:h-9 "
             alt="Logo"
           />

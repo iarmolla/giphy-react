@@ -1,5 +1,8 @@
 import '../styles/upload.css'
 import { Link } from "react-router-dom"
+import giphy from '../assets/images/giphy-upload.png'
+import gif from '../assets/images/gif.gif'
+
 
 function Upload() {
     return (
@@ -7,7 +10,9 @@ function Upload() {
             <div className='flex flex-col pt-4'>
                 <header className='flex flex-row justify-around max-h-10'>
                     <div className='flex flex-row justify-center items-center'>
-                        <img src="https://images.squarespace-cdn.com/content/v1/599bbf76914e6bb960c6d0bb/1525422704166-0UFZBQI8WXK6NVH6KYHA/giphy+logo+web+whit-01.png?format=1500w" className='max-h-20' alt="" />
+                        <Link to="/">
+                            <img src={giphy} className='max-h-20' alt="logo" />
+                        </Link>
                     </div>
                     {/* HEADER BUTTON LOGIN USER */}
                     <div className='flex flex-row'>
@@ -18,7 +23,7 @@ function Upload() {
                     </div>
                 </header>
                 <div className='relative container-upload flex flex-row items-center justify-center'>
-                    <img className='absolute sticker' src="https://giphy.com/static/img/creation_tools/upload-peeker.gif" alt="" />
+                    <img className='absolute sticker' src={gif} alt="sticker" />
                     <main className='upload rounded-md p-12 m-4 flex flex-col justify-center items-center place-content-center'>
                         <section className='flex flex-col justify-center items-center'>
                             <h1 className='text-center'>GIPHY Upload </h1>
