@@ -7,7 +7,7 @@ También cuenta con el formulario de inicio de sesión y de registro, que a su v
 
 ## Características 📋
 
-- Búscador funcionando
+- Buscador funcionando
 - Formulario de inicio de sesión y registro
 - Información del sticker/gif
 - Apartado upload
