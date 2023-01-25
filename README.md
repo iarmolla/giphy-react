@@ -1,4 +1,4 @@
-# Giphy-app
+# Giphy-💻 
 
 La aplicación es un clon de giphy. El mismo cuenta con el búscador de stickers y gifs funcionando, que al hacer click, contiene la información de quien lo creo y un modal del gif o sticker.
 También cuenta con el formulario de inicio de sesión y de registro, que a su vez, posee el apartado de cargar gifs y stickers.
