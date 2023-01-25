@@ -10,7 +10,7 @@ También cuenta con el formulario de inicio de sesión y de registro, que a su v
 - Información del sticker/gif
 - Apartado upload
 
-## Tecnologías
+## Tecnologías 🖥️
 
 Giphy esta construido con:
 
@@ -19,10 +19,10 @@ Giphy esta construido con:
 - [react-icons](https://react-icons.github.io/react-icons/)
 - [react-router-dom](https://reactrouter.com/en/main)
 
-## Instalación 
+## Instalación ⚙️
 
 Generar cuenta, en [giphy](https://developers.giphy.com/) para obtener la api-key, y cambiarla en [syncs/gifs.js]
 
-# Dependencias
+# Dependencias 🔧
 
 - ejecutar npm install
