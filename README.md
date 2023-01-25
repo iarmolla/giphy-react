@@ -3,7 +3,7 @@
 La aplicación es un clon de giphy. El mismo cuenta con el búscador de stickers y gifs funcionando, que al hacer click, contiene la información de quien lo creo y un modal del gif o sticker.
 También cuenta con el formulario de inicio de sesión y de registro, que a su vez, posee el apartado de cargar gifs y stickers.
 
-## Características
+## Características 📋
 
 - Búscador funcionando
 - Formulario de inicio de sesión y registro
@@ -12,7 +12,7 @@ También cuenta con el formulario de inicio de sesión y de registro, que a su v
 
 ## Tecnologías
 
-giphy esta construido con:
+Giphy esta construido con:
 
 - [React](https://es.reactjs.org/)
 - [Tailwind](https://tailwindcss.com/)
