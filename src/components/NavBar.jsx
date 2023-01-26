@@ -31,6 +31,8 @@ function NavBar({ ...props }) {
             }}
             onKeyDown={(e) => {
               if (e.key == "Enter") {
+                props.updateGifs(false)
+
                 syncs.getBySearch(props.search, props.updateGifs);
               }
             }}
