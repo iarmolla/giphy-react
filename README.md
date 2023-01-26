@@ -1,11 +1,13 @@
+[![gif.png](https://i.postimg.cc/Jz07GZvx/gif.png)](https://postimg.cc/21pNtbzL)
+
 # Giphy 💻 
 
-La aplicación es un clon de giphy. El mismo cuenta con el búscador de stickers y gifs funcionando, que al hacer click, contiene la información de quien lo creo y un modal del gif o sticker.
+La aplicación es un clon de giphy. El mismo cuenta con el buscador de stickers y gifs funcionando, que al hacer click, contiene la información de quien lo creo y un modal del gif o sticker.
 También cuenta con el formulario de inicio de sesión y de registro, que a su vez, posee el apartado de cargar gifs y stickers.
 
 ## Características 📋
 
-- Búscador funcionando
+- Buscador funcionando
 - Formulario de inicio de sesión y registro
 - Información del sticker/gif
 - Apartado upload
