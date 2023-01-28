@@ -2,6 +2,7 @@ import React from 'react'
 import '../styles/modal.css'
 import { LazyLoadImage } from 'react-lazy-load-image-component';
 import 'react-lazy-load-image-component/src/effects/opacity.css';
+import 'boxicons'
 
 function Modal({ image, showModal, setShowModal }) {
     return (
