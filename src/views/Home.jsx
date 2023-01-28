@@ -96,7 +96,7 @@ function Home() {
                     })
                 }
                 {
-                    gifs?.data?.length == 0 ? <span>No se encontraron gifs </span> : <></>
+                    gifs?.data?.length === 0 ? <span>No se encontraron gifs </span> : <></>
                 }
             </div>
             <Modal showModal={showModal} setShowModal={setShowModal} image={image}></Modal>

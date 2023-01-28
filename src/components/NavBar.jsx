@@ -27,7 +27,7 @@ function NavBar({ ...props }) {
               props.updateSearch(e.target.value);
             }}
             onKeyDown={(e) => {
-              if (e.key == "Enter") {
+              if (e.key === "Enter") {
                 props.updateGifs(false)
                 syncs.getBySearch(props.search, props.updateGifs);
               }
