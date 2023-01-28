@@ -2,7 +2,6 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from './views/Home';
 import Upload from './views/Upload'
-import 'boxicons'
 import Login from './views/Login';
 import Error from './views/Error'
 
